@@ -5,6 +5,8 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import com.riwi.pruebaFinaRiwi.api.dto.response.VoucherRedeemedResponse;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -43,7 +45,7 @@ public class Voucher {
     @OneToMany(mappedBy = "voucher", orphanRemoval = false, fetch = FetchType.LAZY)
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
-    private List<RedeemedVoucher> redeemeVouchers;
+    private List<VoucherRedeemedResponse> redeemeVouchers;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "productId",referencedColumnName = "id")

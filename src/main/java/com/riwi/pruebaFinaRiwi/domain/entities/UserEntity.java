@@ -2,6 +2,8 @@ package com.riwi.pruebaFinaRiwi.domain.entities;
 
 import java.util.List;
 
+import com.riwi.pruebaFinaRiwi.api.dto.response.VoucherRedeemedResponse;
+
 import jakarta.annotation.Generated;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -39,5 +41,5 @@ public class UserEntity {
     @OneToMany(mappedBy = "userEntity", orphanRemoval = false, fetch = FetchType.LAZY)
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
-    private List<RedeemedVoucher> redeemeVouchers;
+    private List<VoucherRedeemedResponse> redeemeVouchers;
 }
