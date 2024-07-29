@@ -1,4 +1,4 @@
-package com.riwi.pruebaFinaRiwi.api.dto.requests.create;
+package com.riwi.pruebaFinaRiwi.api.dto.requests;
 
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class VaucherRedeemedRequestCreate {
+public class VoucherRedeemedRequest {
 
     @NotBlank(message = "the userId field is required")
     private String userId;

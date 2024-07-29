@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class VauchersResponse {
+public class VouchersResponse {
     
     private String id;
     private String name;
