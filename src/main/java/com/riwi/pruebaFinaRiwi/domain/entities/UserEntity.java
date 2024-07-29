@@ -2,7 +2,6 @@ package com.riwi.pruebaFinaRiwi.domain.entities;
 
 import java.util.List;
 
-import jakarta.annotation.Generated;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
