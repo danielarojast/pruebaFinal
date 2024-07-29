@@ -25,7 +25,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class RedeemeVoucher {
+public class RedeemedVoucher {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;

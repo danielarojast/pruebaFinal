@@ -39,5 +39,5 @@ public class UserEntity {
     @OneToMany(mappedBy = "userEntity", orphanRemoval = false, fetch = FetchType.LAZY)
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
-    private List<RedeemeVoucher> redeemeVouchers;
+    private List<RedeemedVoucher> redeemeVouchers;
 }

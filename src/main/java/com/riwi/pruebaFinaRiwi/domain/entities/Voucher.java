@@ -42,7 +42,7 @@ public class Voucher {
     @OneToMany(mappedBy = "voucher", orphanRemoval = false, fetch = FetchType.LAZY)
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
-    private List<RedeemeVoucher> redeemeVouchers;
+    private List<RedeemedVoucher> redeemeVouchers;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "productId",referencedColumnName = "id")
