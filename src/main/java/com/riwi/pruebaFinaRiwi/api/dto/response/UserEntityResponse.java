@@ -15,11 +15,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class UserEntityResponse {
     
+    private String id;
     private String name;
     private String lastName;
     private String email;
     private String password;
-
     private List<RedeemedVoucher> vaucherHistory; 
 
 }
