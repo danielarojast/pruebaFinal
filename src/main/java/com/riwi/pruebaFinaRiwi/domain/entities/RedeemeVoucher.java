@@ -1,34 +1,35 @@
 package com.riwi.pruebaFinaRiwi.domain.entities;
 
-import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
+import org.springframework.cglib.core.Local;
+
+import jakarta.annotation.Generated;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity(name = "vouchers")
+
+@Entity(name = "redeeme_vouchers")
 @Builder
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Voucher {
+public class RedeemeVoucher {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
-    @Column(nullable = false, length = 100)
-    private String description;
-    @Column(nullable = false,precision = 2, scale = 2)
-    private BigDecimal discount;
     @Column(nullable = false)
-    private LocalDate expirationDate;
+    private String userId;
     @Column(nullable = false)
-    private Boolean status;
+    private String voucherId;
+    @Builder.Default
+    private LocalDateTime date = LocalDateTime.now();
 }
