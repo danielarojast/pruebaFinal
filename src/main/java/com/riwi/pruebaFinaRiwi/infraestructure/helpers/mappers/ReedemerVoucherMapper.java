@@ -6,19 +6,19 @@ import org.mapstruct.MappingConstants;
 
 import com.riwi.pruebaFinaRiwi.api.dto.requests.VoucherRedeemedRequest;
 import com.riwi.pruebaFinaRiwi.api.dto.response.VoucherRedeemedResponse;
-import com.riwi.pruebaFinaRiwi.domain.entities.RedeemeVoucher;
+import com.riwi.pruebaFinaRiwi.domain.entities.RedeemedVoucher;
 
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
 public interface ReedemerVoucherMapper {
 
     
     /*EntityToResponse */
-    VoucherRedeemedResponse entityToResponse(RedeemeVoucher redeemeVoucher);
+    VoucherRedeemedResponse entityToResponse(RedeemedVoucher redeemeVoucher);
     
     /*RequestToEntity */
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "redemptionDate", ignore = true)
     @Mapping(target = "userEntity.id", source = "userId")
     @Mapping(target = "voucher.id", source = "voucherId")
-     RedeemeVoucher requestToEntity(VoucherRedeemedRequest voucherRedeemedRequest);
+     RedeemedVoucher requestToEntity(VoucherRedeemedRequest voucherRedeemedRequest);
 }
