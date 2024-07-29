@@ -17,9 +17,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class VoucherRequest {
     
-    @NotBlank(message = "the name field is required")
-    @Length(max = 150, message = "the name field must be less than 150 characters")
-    private String name;
+    @NotBlank(message = "the description field is required")
+    @Length(max = 150, message = "the description field must be less than 150 characters")
+    private String description;
 
     @NotNull(message = "the discount field is required")
     private Double discount;

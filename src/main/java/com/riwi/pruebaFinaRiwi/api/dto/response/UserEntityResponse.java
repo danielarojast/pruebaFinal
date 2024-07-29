@@ -19,6 +19,6 @@ public class UserEntityResponse {
     private String lastName;
     private String email;
     private String password;
-    private List<RedeemeVoucher> vaucherHistory; 
+    private List<RedeemeVoucher> redeemeVouchers; 
 }
 
