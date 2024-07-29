@@ -2,7 +2,7 @@ package com.riwi.pruebaFinaRiwi.api.dto.response;
 
 import java.util.List;
 
-import com.riwi.pruebaFinaRiwi.domain.entities.RedeemeVoucher;
+import com.riwi.pruebaFinaRiwi.domain.entities.RedeemedVoucher;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -19,6 +19,8 @@ public class UserEntityResponse {
     private String lastName;
     private String email;
     private String password;
-    private List<RedeemeVoucher> redeemeVouchers; 
+
+    private List<RedeemedVoucher> vaucherHistory; 
+
 }
 
