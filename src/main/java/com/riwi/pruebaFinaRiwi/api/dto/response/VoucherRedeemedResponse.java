@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class VaucherRedeemedResponse {
+public class VoucherRedeemedResponse {
     
     private String userId;
     private String vaucherId;

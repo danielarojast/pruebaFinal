@@ -1,4 +1,4 @@
-package com.riwi.pruebaFinaRiwi.api.dto.requests.create;
+package com.riwi.pruebaFinaRiwi.api.dto.requests;
 
 import org.hibernate.validator.constraints.Length;
 
@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserEntityRequestCreate {
+public class UserEntityRequest {
     
     @NotBlank(message = "the name field is required")
     @Length(max = 100, message = "the name field must be less than 100 characters")

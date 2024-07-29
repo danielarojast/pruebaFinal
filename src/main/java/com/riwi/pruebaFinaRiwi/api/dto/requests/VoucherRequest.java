@@ -1,6 +1,8 @@
-package com.riwi.pruebaFinaRiwi.api.dto.requests.update;
+package com.riwi.pruebaFinaRiwi.api.dto.requests;
 
 import java.time.LocalDateTime;
+
+import org.hibernate.validator.constraints.Length;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -13,17 +15,21 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class VaucherRequestUpdate {
+public class VoucherRequest {
     
-    @NotBlank(message = "the description field is required")
-    private String description;
+    @NotBlank(message = "the name field is required")
+    @Length(max = 150, message = "the name field must be less than 150 characters")
+    private String name;
 
     @NotNull(message = "the discount field is required")
     private Double discount;
-    
+
+    @NotBlank(message = "the expirationDate field is required")
     private LocalDateTime expirationDate;
 
     @NotNull(message = "the status field is required")
     private Boolean status;
+
+    private String productId;
 
 }

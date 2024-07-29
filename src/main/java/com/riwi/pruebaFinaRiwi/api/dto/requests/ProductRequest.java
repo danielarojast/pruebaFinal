@@ -1,6 +1,7 @@
-package com.riwi.pruebaFinaRiwi.api.dto.requests.update;
+package com.riwi.pruebaFinaRiwi.api.dto.requests;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,11 +11,12 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class ProductRequestUpdate {
-    
+public class ProductRequest {
+
     @NotBlank(message = "the name field is required")
     private String name;
 
-    @NotBlank(message = "the price field is required")
+    @NotNull(message = "the price field is required")
     private Double price;
+    
 }
