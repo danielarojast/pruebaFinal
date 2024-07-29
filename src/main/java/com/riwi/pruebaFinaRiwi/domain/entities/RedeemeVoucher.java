@@ -31,7 +31,7 @@ public class RedeemeVoucher {
     private String id;
 
     @Builder.Default
-    private LocalDateTime date = LocalDateTime.now();
+    private LocalDateTime redemptionDate = LocalDateTime.now();
     
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "userId",referencedColumnName = "id")

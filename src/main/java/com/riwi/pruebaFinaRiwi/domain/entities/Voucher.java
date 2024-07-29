@@ -2,6 +2,7 @@ package com.riwi.pruebaFinaRiwi.domain.entities;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import jakarta.persistence.Column;
@@ -35,7 +36,7 @@ public class Voucher {
     @Column(nullable = false,precision = 2, scale = 2)
     private BigDecimal discount;
     @Column(nullable = false)
-    private LocalDate expirationDate;
+    private LocalDateTime expirationDate;
     @Column(nullable = false)
     private Boolean status;
 
