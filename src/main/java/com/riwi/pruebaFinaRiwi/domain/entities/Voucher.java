@@ -2,17 +2,24 @@ package com.riwi.pruebaFinaRiwi.domain.entities;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Entity(name = "vouchers")
 @Builder
@@ -31,4 +38,14 @@ public class Voucher {
     private LocalDate expirationDate;
     @Column(nullable = false)
     private Boolean status;
+
+    @OneToMany(mappedBy = "voucher", orphanRemoval = false, fetch = FetchType.LAZY)
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    private List<RedeemeVoucher> redeemeVouchers;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "productId",referencedColumnName = "id")
+    private Product product;
+    
 }

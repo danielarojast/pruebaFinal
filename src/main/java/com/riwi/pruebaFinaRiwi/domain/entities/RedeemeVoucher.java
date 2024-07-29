@@ -8,9 +8,12 @@ import org.springframework.cglib.core.Local;
 import jakarta.annotation.Generated;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -26,10 +29,15 @@ public class RedeemeVoucher {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
-    @Column(nullable = false)
-    private String userId;
-    @Column(nullable = false)
-    private String voucherId;
+
     @Builder.Default
     private LocalDateTime date = LocalDateTime.now();
+    
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "userId",referencedColumnName = "id")
+    private UserEntity userEntity;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "voucherId",referencedColumnName = "id")
+    private Voucher voucher;
 }
