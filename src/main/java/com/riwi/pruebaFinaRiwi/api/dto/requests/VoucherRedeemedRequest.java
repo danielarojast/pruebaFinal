@@ -16,6 +16,6 @@ public class VoucherRedeemedRequest {
     private String userId;
 
     @NotBlank(message = "the vaucherId field is required")
-    private String vaucherId;
+    private String voucherId;
 
 }

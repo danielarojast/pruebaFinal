@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 public class VouchersResponse {
     
     private String id;
-    private String name;
+    private String description;
     private Double discount;
     private LocalDateTime expirationDate;
     private Boolean status;
