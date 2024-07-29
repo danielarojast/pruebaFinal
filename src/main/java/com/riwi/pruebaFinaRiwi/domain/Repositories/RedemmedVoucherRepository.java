@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.riwi.pruebaFinaRiwi.domain.entities.RedeemedVoucher;
 
 @Repository
-public interface RedemmerVoucherRepository extends JpaRepository<RedeemedVoucher, String> {
+public interface RedemmedVoucherRepository extends JpaRepository<RedeemedVoucher, String> {
     
 }
