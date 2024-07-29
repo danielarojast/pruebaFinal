@@ -7,6 +7,7 @@ import javax.swing.JOptionPane;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.riwi.pruebaFinaRiwi.api.dto.requests.VoucherRequest;
@@ -91,6 +92,17 @@ public class VoucherService implements IVoucherService{
     public List<Voucher> findAllList() {
         
         return this.voucherRepository.findAll();
+    }
+
+    @Override
+    public Page<VouchersResponse> getByStatus(boolean status, int page, int size) {
+        if (page <= 0) {
+            page = 0;
+        }
+
+        Pageable pageable = PageRequest.of(page, size);
+        return this.voucherRepository.findAllByStatus(status, pageable).map(this.voucherMapper::entityToResponse);
+        
     }
     
 }
