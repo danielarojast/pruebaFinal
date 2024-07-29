@@ -5,13 +5,13 @@ import org.springframework.stereotype.Service;
 
 import com.riwi.pruebaFinaRiwi.api.dto.requests.VoucherRedeemedRequest;
 import com.riwi.pruebaFinaRiwi.api.dto.response.VoucherRedeemedResponse;
-import com.riwi.pruebaFinaRiwi.infraestructure.abstract_services.interfaces.IRedeemeVoucherService;
+import com.riwi.pruebaFinaRiwi.infraestructure.abstract_services.interfaces.IRedeemedVoucherService;
 
 import lombok.AllArgsConstructor;
 
 @Service
 @AllArgsConstructor
-public class RedeemedVoucher implements IRedeemeVoucherService {@Override
+public class RedeemedVoucher implements IRedeemedVoucherService {@Override
     public VoucherRedeemedResponse create(VoucherRedeemedRequest request) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'create'");
