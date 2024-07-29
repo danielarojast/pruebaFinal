@@ -12,6 +12,7 @@ import com.riwi.pruebaFinaRiwi.domain.Repositories.UserEntityRepository;
 import com.riwi.pruebaFinaRiwi.domain.entities.UserEntity;
 import com.riwi.pruebaFinaRiwi.infraestructure.abstract_services.interfaces.IUserEntityService;
 import com.riwi.pruebaFinaRiwi.infraestructure.helpers.mappers.UserMapper;
+import com.riwi.pruebaFinaRiwi.utils.exception.BadRequestException;
 
 import lombok.AllArgsConstructor;
 
@@ -33,7 +34,7 @@ public class UserEntityService implements IUserEntityService{
 
     @Override
     public UserEntityResponse update(String id, UserEntityRequest request) {
-        UserEntity userEntity = repository.findById(id).orElseThrow();
+        UserEntity userEntity = repository.findById(id).orElseThrow(() -> new BadRequestException("User " + id + " not found"));
 
         UserEntity toUpdate = userMapper.requestToEntity(request);
         toUpdate.setId(userEntity.getId());
@@ -44,19 +45,19 @@ public class UserEntityService implements IUserEntityService{
 
     @Override
     public void delete(String id) {
-        UserEntity userEntity = repository.findById(id).orElseThrow();
+        UserEntity userEntity = repository.findById(id).orElseThrow(() -> new BadRequestException("User " + id + " not found"));
         repository.delete(userEntity);
     }
 
     @Override
     public Page<UserEntityResponse> findAll(int page, int size) {
-        Pageable pageRequest = PageRequest.of(page, size);
+        Pageable pageRequest = PageRequest.of(page -1, size);
         return repository.findAll(pageRequest).map(userMapper::entityToResponse);
     }
 
     @Override
     public UserEntityResponse findById(String id) {
-        return userMapper.entityToResponse(repository.findById(id).orElseThrow());
+        return userMapper.entityToResponse(repository.findById(id).orElseThrow(() -> new BadRequestException("User " + id + " not found")));
     }
     
 }
