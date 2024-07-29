@@ -1,3 +1,8 @@
+https://pruebafinal-fjtd.onrender.com
+https://github.com/danielarojast/pruebaFinal
+https://trello.com/b/bEOrwWlN/prueba-final
+
+
 Coupon Management and Redemption System
 
 
