@@ -15,5 +15,5 @@ public class VoucherRedeemedResponse {
     
     private String userId;
     private String vaucherId;
-    private LocalDateTime redeemptionDate;
+    private LocalDateTime redemptionDate;
 }
